@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">IMAGE</th>
+        <th scope="col">DATA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of data">
+        <th scope="row">{{data.Id}}</th>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.image}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="editData(data.Id)" >Edit</button>
+          <button type="button" class="btn btn-primary" (click)="deleteData(data.Id)" >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

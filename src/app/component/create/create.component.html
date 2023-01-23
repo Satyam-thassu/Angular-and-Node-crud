@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="form-group mt-2 mb-2" style="margin-left: 1000px; margin-top: 24px;">
+    <button type="button" class="btn btn-primary float-right" routerLink="read">TableRead</button>
+  </div>
+<form [formGroup]="datavalue" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <label for="data">data</label>
+    <input type="text" class="form-control" formControlName="data" id="data" placeholder="data">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" formControlName="file" id="exampleFormControlFile1">
+  </div>
+  <div>
+  <div class="text-center">
+  <button type="submit" class="btn btn-primary mb-4" (click)="formmodule()">Submit</button>
+  </div>
+  </div>
+</form>
+</div>
