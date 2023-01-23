@@ -1,22 +1,25 @@
 <div class="container">
+  <img src="assets/me.png"/>
   <table class="table mt-4">
     <thead>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">NAME</th>
-        <th scope="col">EMAIL</th>
-        <th scope="col">IMAGE</th>
-        <th scope="col">DATA</th>
+         <th scope="col">Image</th>
+        <!-- <th scope="col">IMAGE</th>
+        <th scope="col">DATA</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of data">
-        <th scope="row">{{data.Id}}</th>
-        <td>{{data.name}}</td>
-        <td>{{data.email}}</td>
-        <td>{{data.image}}</td>
+      <tr *ngFor="let data of data; let i=index;">
+        <th scope="row">{{i+1}}</th>
         <td>
-          <button type="button" class="btn btn-primary" (click)="editData(data.Id)" >Edit</button>
+          <input type="text" #name value= "{{data.Username}}" />
+        </td>
+        <td>{{data.Password}}</td>
+        <td><img  class="images" src="./src/assets/me.png"/></td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="editData(data.Id,name)" >Edit</button>
           <button type="button" class="btn btn-primary" (click)="deleteData(data.Id)" >Delete</button>
         </td>
       </tr>

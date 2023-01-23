@@ -9,7 +9,6 @@ import { NewserviceService } from 'src/app/service/newservice.service';
 export class ReadComponent implements OnInit {
 
   data:any
-
   constructor(private service:NewserviceService) { }
 
   ngOnInit() {
@@ -30,8 +29,17 @@ export class ReadComponent implements OnInit {
     this.data=response.list;
     console.log(this.data)
  })
-
-
   }
+editData(params,value) {
+  // let event = value.value;
+  // console.log(params,event);
+  let postData = {
+    Id: params,
+    Username: value.value
+  }
+  this.service.updateData(postData).subscribe(res => {
+    console.log(res)
+  })
+}
 
 }
